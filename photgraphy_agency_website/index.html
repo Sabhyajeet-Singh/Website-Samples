@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive layout</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+    <!-- ********************* preloader ******************* -->
+    <!-- <div id="preloader" >
+
+    </div> -->
+
+    <!-- ********************** Header ********************* -->
+    <header class="header">
+        <div class="logo">
+            Photographer
+        </div>
+
+        <nav class="navLinks">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Photographs</a></li>
+                <li><a href="">Events</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div id="hamburger_icon">
+            <input type="checkbox" id="hamburger_check">
+            <label for="hamburger_check">
+                <div class="lines one"></div>
+                <div class="lines"></div>
+                <div class="lines three"></div>
+            </label>
+        </div>
+            
+    </header>
+
+    <!-- Banner Section -->
+
+    <section id="banner">
+
+        <div class="col-1">
+            <div class="text_container">
+                <h1 class="primary_heading fade-up">Capturing Your<br>Special Moments</h1>
+                <h3 class="tagline fade-up">With Passion To Make Them <br>Last Long !!</h3>
+                <Button class="banner_Cta fade-up">Schedule Yours</Button>
+            </div>
+        </div>
+
+        <div class="social_links fade-left">
+            <a href=""> <img src="facebook.png" alt="facebook_icon"></a>
+            <a href=""> <img src="instagram.png" alt="instagram_icon"></a>
+            <a href=""> <img src="linkedin.png" alt="linkedin_icon"></a>
+
+        </div>
+
+    </section>
+
+    <section id="perks">
+        <h2 data-aos="fade-up" class="secondary_heading">What We Offer ?</h2>
+
+        <div data-aos="fade-in" class="grid_container">
+            <div id="grid1" class="grid_item "><img src="image1.jpg" alt=""></div>
+            <div id="grid2" class="grid_item grid_content">
+                <h4>Title1</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt porro nobis a iusto dicta, natus
+                    amet. Exercitationem nihil molestias tempore.</p>
+            </div>
+            <div id="grid3" class="grid_item"><img src="image2.jpg" alt=""></div>
+            <div id="grid4" class="grid_item grid_content">
+                <h4>Title2</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt porro nobis a iusto dicta, natus
+                    amet. Exercitationem nihil molestias tempore.</p>
+            </div>
+            <div id="grid5" class="grid_item"><img src="image3.jpg" alt=""></div>
+            <div id="grid6" class="grid_item grid_content">
+                <h4>Title3</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt porro nobis a iusto dicta, natus
+                    amet. Exercitationem nihil molestias tempore.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About us section -->
+
+    <section id="about">
+        <h2 data-aos="fade-up" class="secondary_heading">About Us</h2>
+
+        <div class="container">
+            <div data-aos="fade-right" class="col-1">
+
+            </div>
+            <div class="col-2">
+                <h3 data-aos="fade-in">What We Do?</h3>
+                <p data-aos="fade-in" class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+                    repellendus animi quibusdam quam perspiciatis corporis, numquam rem, iusto et eveniet non nobis!
+                    Tempore quo laudantium cupiditate aut nisi nam facere.</p>
+                <p data-aos="fade-in" class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam
+                    facilis natus laboriosam, qui dolorem ipsum! Fuga tempore et tenetur totam fugiat, fugit quas
+                    recusandae eligendi voluptatibus ipsa. Repellat blanditiis illo, veniam, accusamus rem perferendis
+                    eum rerum laudantium nemo itaque doloribus necessitatibus culpa consequuntur nam voluptas magnam
+                    doloremque pariatur animi, vitae et nostrum optio? Perspiciatis tempora laborum fugit quia magni.
+                    Officiis.</p>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 220,
+            duration: 1500
+        });
+    </script>
+    <!-- <script src="script.js"></script> -->
+</body>
+
+</html>

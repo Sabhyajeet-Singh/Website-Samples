@@ -1,0 +1,589 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Arima+Madurai:wght@500&family=Arvo:wght@700&family=Cinzel:wght@500&family=Eagle+Lake&family=Gentium+Book+Basic&family=Italiana&family=Merienda&family=Merriweather:ital,wght@1,900&family=Ms+Madi&family=Tangerine:wght@700&family=Vollkorn+SC:wght@700&display=swap');
+
+
+/* utilities */
+
+.basic_flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.space_between {
+    justify-content: space-between;
+}
+
+.space_evenly {
+    justify-content: space-evenly;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+/* @@@@@@@@@@@@@@@ Animations @@@@@@@@@@@@@@@ */
+
+.fade-up {
+    animation: fade-up 1s linear forwards;
+    animation-delay: .1s;
+}
+
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+
+    }
+}
+
+.fade-left {
+    animation: fade-left 1s linear forwards;
+
+}
+
+
+@keyframes fade-left {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+
+    }
+}
+
+
+/* @@@@@@@@@@@@@@@ preloader @@@@@@@@@@@@@@@@ */
+
+#preloader {
+    height: 100vh;
+    width: 100%;
+    background: url('preloader.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.header {
+    padding: 8px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 100;
+}
+
+.header .logo {
+    font-weight: 800px;
+    font-size: 22px;
+    font-family: 'Eagle Lake', cursive;
+
+}
+
+.header .navLinks ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.header .navLinks ul li {
+    margin: 0 30px;
+    position: relative;
+    padding: 8px 15px;
+    transition: .5s;
+    transition: all 1s;
+}
+
+.header .navLinks ul li a {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2b2828;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.header .navLinks ul li:hover a {
+    color: rgb(18, 156, 156);
+}
+
+.header .navLinks ul li::before {
+    content: "";
+    position: absolute;
+    height: 10px;
+    ;
+    width: 10px;
+    border: 1.5px solid rgb(93, 92, 92);
+    border-radius: 2px;
+    border-bottom: none;
+    border-right: none;
+    top: 0;
+    left: 0px;
+    display: none;
+    transition: all 1s;
+}
+
+.header .navLinks ul li:hover:before {
+    display: block;
+    height: 10px;
+    width: 10px;
+    transition: all 1s;
+}
+
+.header .navLinks ul li::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    ;
+    width: 100%;
+    border: 1.5px solid rgb(93, 92, 92);
+    border-radius: 2px;
+    border-top: none;
+    border-left: none;
+    bottom: 0;
+    right: 0px;
+    display: none;
+    transition: all 1s;
+}
+
+.header .navLinks ul li:hover:after {
+    display: block;
+    height: 10px;
+    width: 10px;
+    transition: all 1s;
+}
+
+
+
+/* Hamburger icon */
+#hamburger_check{
+    display: none;
+}
+#hamburger_icon{
+    padding: 5px;
+    display: none;
+}
+
+  #hamburger_icon .lines{
+    width: 40px;
+    height: 5px;
+    background-color: #2b2828;
+    opacity: .8;
+    display: block;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  .hamburger:hover{
+    cursor: pointer;
+  }
+  #hamburger_check:checked ~ label .one{
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  #hamburger_check:checked ~ label .three{
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  .close_icon{
+    animation: toggle_icon .5s linear forwards;
+  }
+  
+  
+
+#banner {
+    height: 90vh;
+    width: 100%;
+    background: url('photographer_Banner.png');
+    background-size: 100% 100%;
+    position: relative;
+}
+
+#banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+
+    background-color: rgb(237, 237, 237);
+    animation: curtain_left_flap 3s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes curtain_left_flap {
+    0% {
+        width: 50%;
+    }
+
+    100% {
+        width: 0%;
+        opacity: 0;
+    }
+
+}
+
+#banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+
+    background-color: rgb(237, 237, 237);
+    animation: curtain_right_flap 3s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes curtain_right_flap {
+    0% {
+        width: 50%;
+    }
+
+    100% {
+        width: 0%;
+        opacity: 0;
+    }
+
+}
+
+/* @@@@@@@@@@@@ Banner Content @@@@@@@@@@@@@@ */
+
+.text_container {
+
+    position: absolute;
+    right: 0;
+    height: 90vh;
+    width: 730px;
+    padding: 65px 20px;
+
+}
+
+#banner .col-1 .text_container .primary_heading {
+    font-size: 60px;
+    margin: 10px 0 30px 0;
+    opacity: 0;
+    font-family: 'Gentium Book Basic', serif;
+    font-weight: 500px;
+    letter-spacing: 3px;
+}
+
+#banner .col-1 .text_container .primary_heading.fade-up {
+    animation-delay: 2s;
+}
+
+#banner .col-1 .text_container .tagline {
+    font-size: 25px;
+    opacity: 0;
+    margin: 50px 0;
+    color: #2b2828a1;
+    font-family: 'Arima Madurai', cursive;
+    font-family: 'Vollkorn SC', serif;
+    font-family: 'Italiana', serif;
+    /* font-weight: 400; */
+
+}
+
+#banner .col-1 .text_container .tagline.fade-up {
+    animation-delay: 2.5s;
+}
+
+#banner .col-1 .text_container .banner_Cta {
+    border: none;
+    opacity: 0;
+    border-radius: 10px 50px 50px 10px;
+    padding: 10px 15px;
+    background-color: rgba(0, 255, 255, 0.552);
+    box-shadow: 2px 2px 15px rgba(0, 255, 255, 0.452);
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Arvo', serif;
+    cursor: pointer;
+}
+
+#banner .col-1 .text_container .banner_Cta.fade-up {
+    animation-delay: 3s;
+}
+
+#banner .social_links {
+    position: fixed;
+    right: 0;
+    bottom: 40px;
+    background-color: #cdcdcd61;
+    height: 150px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 15px 0 0 15px;
+    opacity: 0;
+    /* z-index: -1; */
+}
+
+#banner .social_links.fade-left {
+    animation-delay: 3.5s;
+}
+
+#banner .social_links a {
+    text-decoration: none;
+
+}
+
+#banner .social_links a img {
+    height: 20px;
+    width: 20px;
+    transition: all .5s;
+}
+
+#banner .social_links a:hover img {
+    transform: scale(1.1);
+}
+
+
+
+#perks {
+    /* height: 100vh; */
+    width: 100%;
+    padding: 50px;
+    background-color: #cdcdcd40;
+}
+
+.secondary_heading {
+    text-align: center;
+    font-family: 'Gentium Book Basic', serif;
+    font-size: 35px;
+    margin: 10px 0;
+}
+
+#perks .grid_container {
+    display: grid;
+    margin: 25px auto;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 0 15px rgb(93, 92, 92, 0.3);
+    width: 70%;
+    height: 450px;
+
+}
+
+#perks .grid_container .grid_item {
+    
+    position: relative;
+    overflow: hidden;
+}
+
+#perks .grid_container .grid_item img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#perks .grid_container .grid_content {
+    padding: 10px 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.grid_content h4 {
+    margin: 10px 0;
+    font-family: 'Italiana', serif;
+    font-size: 22px;
+
+}
+
+.grid_content p {
+    color: grey;
+}
+
+
+/* @@@@@@@@@@@@@@@ about section @@@@@@@@@@@@ */
+
+#about {
+    padding: 10px 30px;
+}
+
+#about .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+    flex-wrap: wrap;
+}
+
+#about .col-1 {
+    height: 400px;
+    width: 400px;
+    position: relative;
+    background: url('image1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#about .col-2 {
+    height: 400px;
+    width: 700px;
+    padding: 20px;
+}
+
+#about .col-2 h3 {
+    margin: 10px 0 20px 0;
+    font-size: 24px;
+    color: #2b2828;
+}
+
+#about .col-2 .desc {
+    margin: 18px 0;
+    font-size: 18px;
+    line-height: 28px;
+
+}
+
+#about .container .col-1::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('mask.png');
+    background-size: cover;
+    background-position: center;
+    mix-blend-mode: screen;
+
+}
+
+::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+    background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 255, 0.452);
+    /* -webkit-border-radius: 1ex; */
+    width: 20px;
+    height: 10px;
+
+}
+
+
+
+@media (max-width: 501px) {
+    .header{
+        padding: 25px 15px;
+    }
+    .header .navLinks
+     {
+        
+        display: none;
+    }
+    #banner{
+        height: 108vh;
+        width: 100vw;
+        background-size: 210% 45%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+    #banner .text_container{
+        top: 53%;
+        left: 3%;
+    }
+    #banner .col-1 .text_container .primary_heading{
+        font-size: 45px;
+        letter-spacing: normal;
+        
+        
+    }
+    #banner .col-1 .text_container .tagline{
+        margin: 8px 0;
+    }
+    #banner .col-1 .text_container .banner_Cta{
+        margin: 40px 0;
+    }
+    #hamburger_icon{
+        display: block;
+    }
+
+    /* perk section */
+    #perks{
+        height: 230vh;
+        padding: 30px 0;
+    }
+    #perks .grid_container{
+        width: 85%;
+        height: 200vh;
+        grid-template-columns: auto;
+        padding: 10px ;
+    }
+    
+    #perks .grid_container .grid_item{
+        height: 200px;
+    }
+    
+     #grid1{
+        order: 1;
+        
+    }
+     #grid2{
+        order: 2;
+    }
+    #grid3{
+        order: 5;
+        
+    }
+     #grid4{
+        order: 4;
+    }
+    #grid5{
+        order: 3;
+        
+    }
+    #grid6{
+        order: 6;
+    }
+
+    /* about section */
+    #about{
+        padding: 20px 10px;
+        
+    }
+    #about .container {
+        padding: 10px;
+        
+    }
+    #about .container .col-1, .col-2{
+        width: 90%;
+    }
+}
+
